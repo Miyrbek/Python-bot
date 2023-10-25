@@ -19,7 +19,6 @@ def handle_location(message):
     longitude = message.location.longitude
     url = f'http://api.weatherapi.com/v1/current.json?key={api}&q={latitude},{longitude}'
     response = requests.get(url)
-    print(response.json())
     a = response.json().get('current').get('temp_c')
     b = response.json().get('location').get('region')
     c = response.json().get('location').get('country')
